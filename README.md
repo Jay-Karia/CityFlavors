@@ -1,2 +1,2 @@
-# Food-Ordering-App
+# CityFlavours
 Online food ordering app

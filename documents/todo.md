@@ -1,4 +1,4 @@
-# TODO
+# TODOs
 
 - [ ]  Home Page
     - [ ]  Navbar
@@ -14,33 +14,46 @@
 - [ ]  Authentication
     - [ ]  Login Page
     - [ ]  Register Page
+    - [ ]  Backend
 - [ ]  Category Page
 - [ ]  All Products Page
     - [ ]  Search
     - [ ]  Filter
+    - [ ]  Display all Products
 - [ ]  Specific Product Page
 - [ ]  Profile
     - [ ]  Edit Profile
         - [ ]  Edit Profile API
-        - [ ]  Implement in Frontend
+        - [ ]  Edit Profile Frontend
     - [ ]  Order History
         - [ ]  Order History API
-        - [ ]  Implement in Frontend
+        - [ ]  Order History Frontend
 - [ ]  Admin
     - [ ]  Manage Items
         - [ ]  Manage Items API
-        - [ ]  Implement in Frontend
+        - [ ]  Manage Items Frontend
     - [ ]  Manage Categories
         - [ ]  Manage Categories API
-        - [ ]  Implement in Frontend
+        - [ ]  Manage Categories Frontend
     - [ ]  View all Users
         - [ ]  View all Users API
-        - [ ]  Implement in Frontend
+        - [ ]  View all Users Frontend
     - [ ]  View all Orders
         - [ ]  View all Orders API
-        - [ ]  Implement in Frontend
+        - [ ]  View all Orders Frontend
 - [ ]  Cart
+    - [ ]  Cart Page
+    - [ ]  Cart Drawer
+    - [ ]  Cart APIs
+        - [ ]  Add Item
+        - [ ]  Remove Item
 - [ ]  Checkout
+    - [ ]  Checkout API
+    - [ ]  Checkout Frontend
+    - [ ]  Order Status Page
+    - [ ]  Send email to admin
 - [ ]  About Us Page
 - [ ]  Contact Us Page
 - [ ]  Feedback
+    - [ ]  Feedback API
+    - [ ]  Feedback Frontend

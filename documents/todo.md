@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TODO
 
 - [ ]  Home Page
@@ -45,16 +44,3 @@
 - [ ]  About Us Page
 - [ ]  Contact Us Page
 - [ ]  Feedback
-=======
-# TODO
-
-- [ ]  Home Page
-    - [ ]  Navbar
-    - [ ]  Hero Section
-    - [ ]  Special Categories
-    - [ ]  Footer
--
--
--
--
->>>>>>> caafb05522f1eca685ebc420a16f43b0e19f1b31

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto_Condensed as FontSans } from "next/font/google";
+import { Roboto_Condensed as FontSans, Inter } from "next/font/google";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
 
-export const fontSans = FontSans({
+export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          inter.variable
         )}>{children}</body>
     </html>
   );

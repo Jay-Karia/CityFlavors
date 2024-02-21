@@ -1,5 +1,3 @@
-import Header from "@/components/Header"
-
 const HeroSection = () => {
   return (
     <div className="h-96 bg-slate-50 flex justify-around">

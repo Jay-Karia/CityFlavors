@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
 
       <LinkGroup headerText="Company" links={["Home", "Items", "About Us", "Contact Us"]} hrefs={["/", "/items", "/about", "/contact"]} />
-      <LinkGroup headerText="Legal" links={["Terms of Service", "Privacy Policy"]} hrefs={["/dummy", "/dummy"]} />
+      <LinkGroup headerText="Legal" links={["Terms of Service", "Privacy Policy"]} hrefs={["/dummy", "/dummy"]}/>
       <LinkGroup headerText="Customer Support" links={["Support", "Testimonials"]} hrefs={["/dummy", "/dummy"]} />
     </div>
   )

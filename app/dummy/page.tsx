@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 const DummyPage = () => {
@@ -17,7 +18,12 @@ const DummyPage = () => {
             </p>
             <div className="mt-10">
                 <Link href="/">
-                    <Button variant={"colored"}>Go to Home</Button>
+                    <Button variant={"colored"}>
+                        <div className="flex gap-2">
+                            <Image src="/arrow-left.svg" alt="home" width={20} height={20} />
+                            Go to Home
+                        </div>
+                    </Button>
                 </Link>
             </div>
         </div>

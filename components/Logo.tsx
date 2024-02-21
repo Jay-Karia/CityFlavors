@@ -1,11 +1,10 @@
 import Link from "next/link"
-import LogoIcon from "./logo-icon"
+import LogoIcon from "@/components/logo-icon"
 
 const Logo = () => {
   return (
     <Link href="/">
       <div className="flex sm:space-x-5 space-x-2 items-center">
-        <LogoIcon />
         <LogoIcon />
         <h3 className="scroll-m-20 sm:text-2xl font-normal tracking-tight text-xl">
           CityFlavors

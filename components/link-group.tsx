@@ -21,16 +21,15 @@ const LinkGroup = ({ headerText, links, hrefs, horizontal = false, variant = "li
         {links.map((link, index) => (
           <div key={index} className="hover:underline-offset-4 hover:underline cursor-pointer">
             {variant === "button" ? (
-              <Link key={index} href={hrefs[index]}>
-              <Button variant="link" >
-                {link}
+              <Button variant="link" asChild>
+                <Link key={index} href={hrefs[index]}>{link}</Link>
               </Button>
-            </Link>) : <Link href={hrefs[index]}>
+            ) : <Link href={hrefs[index]}>
               <p className="text-sm">
                 {link}
               </p>
             </Link>
-              }
+            }
           </div>
         ))}
       </div>

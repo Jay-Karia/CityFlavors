@@ -22,12 +22,8 @@ const Navbar = () => {
       </div>
 
       <div className="hidden sm:block space-x-5">
-        <Link href="/login">
-          <Button variant={"link"}>Login</Button>
-        </Link>
-        <Link href="/register">
-          <Button variant={"outline"}>Register</Button>
-        </Link>
+        <Button variant={"link"} asChild><Link href="/login">Login</Link></Button>
+        <Button variant={"outline"} asChild><Link href="/register">Register</Link></Button>
       </div>
 
       {/* Small Screen Navbar */}

@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import Typography from './typography'
-
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 
@@ -9,7 +7,7 @@ type Props = {
   links: string[],
   hrefs: string[],
   horizontal?: boolean,
-  variant?: string
+  variant?: "link" | "button"
 }
 
 const LinkGroup = ({ headerText, links, hrefs, horizontal = false, variant = "link" }: Props) => {

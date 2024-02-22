@@ -4,29 +4,17 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+import ErrorCard from "@/components/error-card";
+
 const DummyPage = () => {
     return (
-        <div className="mt-20 flex flex-col items-center">
-            <h1 className="text-6xl font-bold tracking-tight">
-                999
-            </h1>
-            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-                Dummy Page
-            </h2>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-                Sorry for the inconvenience, but this page is not available.
-            </p>
-            <div className="mt-10">
-                <Link href="/">
-                    <Button variant={"colored"}>
-                        <div className="flex gap-2">
-                            <Image src="/arrow-left.svg" alt="home" width={20} height={20} />
-                            Go to Home
-                        </div>
-                    </Button>
-                </Link>
-            </div>
-        </div>
+        <>
+            <ErrorCard
+                statusCode={999}
+                heading="Dummy Page"
+                subText="Sorry for the inconvenience, but this page is not available."
+            />
+        </>
     )
 }
 

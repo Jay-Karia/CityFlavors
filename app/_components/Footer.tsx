@@ -3,7 +3,7 @@ import LinkGroup from "@/components/link-group";
 
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-full pb-10 pt-2 flex flex-wrap h-[180px] sm:justify-evenly sm:gap-0 justify-items-center gap-10">
+    <footer className=" w-full pb-10 pt-2 flex flex-wrap h-[180px] sm:justify-evenly sm:gap-0 justify-items-center gap-10">
       <div className="flex flex-col mx-5">
         <h3 className="scroll-m-20 text-2xl font-normal tracking-tight ">
           CityFlavors

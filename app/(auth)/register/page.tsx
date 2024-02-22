@@ -1,8 +1,10 @@
-import React from 'react'
+import AuthCard from "@/app/_components/AuthCard"
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <div className='h-full flex justify-center'>
+       <AuthCard header='Register' subtitle='Create an account!' authType='register' /> 
+    </div>
   )
 }
 

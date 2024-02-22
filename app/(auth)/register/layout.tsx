@@ -6,7 +6,7 @@ type Props = {
 
 const RegisterLayout = ({children} : Props) => {
   return (
-    <div>
+    <div className="pt-5 h-full">
       {children}
     </div>
   )

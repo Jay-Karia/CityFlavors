@@ -6,7 +6,7 @@ type Props = {
 
 const DummyLayout = ({children} : Props) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center h-full flex-col">
         {children}
     </div>
   )

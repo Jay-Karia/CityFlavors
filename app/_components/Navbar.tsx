@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div className="flex min-h-14 items-center sm:justify-around justify-between mx-2 bg-transparent">
       <Logo />
-      <div className="hidden gap-5 sm:block">
+      <div className="hidden sm:block">
         <LinkGroup
           headerText=""
           links={["Home", "Items", "About Us", "Contact Us"]}

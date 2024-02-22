@@ -1,5 +1,4 @@
-import ErrorCard from "@/components/error-card"
-import Image from "next/image"
+import ErrorCard from "@/components/error-page"
 
 const NotFound = () => {
   return (

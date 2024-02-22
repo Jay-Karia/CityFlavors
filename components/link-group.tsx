@@ -7,16 +7,17 @@ type Props = {
   links: string[],
   hrefs: string[],
   horizontal?: boolean,
-  variant?: "link" | "button"
+  variant?: "link" | "button",
+  className?: string,
 }
 
-const LinkGroup = ({ headerText, links, hrefs, horizontal = false, variant = "link" }: Props) => {
+const LinkGroup = ({ headerText, links, hrefs, horizontal = false, variant = "link", className = "" }: Props) => {
   return (
-    <div>
+    <div className={className}>
       <h4 className="scroll-m-20 text-md font-semibold tracking-tight">
         {headerText}
       </h4>
-      <div className={cn((!horizontal ? "flex-col space-y-1 mt-1" : "space-x-1") + " flex")}>
+      <div className={cn((!horizontal ? "flex-col space-y-1 mt-1" : "") + " flex")}>
         {links.map((link, index) => (
           <div key={index} className="hover:underline-offset-4 hover:underline cursor-pointer">
             {variant === "button" ? (

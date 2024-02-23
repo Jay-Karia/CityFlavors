@@ -1,4 +1,4 @@
-import ErrorCard from "@/components/error-page"
+import ErrorCard from "@/components/error-card"
 
 const NotFound = () => {
   return (

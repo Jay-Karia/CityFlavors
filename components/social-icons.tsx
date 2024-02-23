@@ -1,17 +1,20 @@
-import Image from "next/image"
 import Link from "next/link"
+
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const SocialIcons = () => {
   return (
     <div className="flex gap-5 mt-6">
-      <Link href="/dummy">
-        <Image src="/instagram.svg" alt="instagram" width={20} height={20} className="cursor-pointer" />
+      <Link href="/dummy" aria-label="Instagram Account">
+        <FaInstagram className="cursor-pointer" size={20}/>
       </Link>
-      <Link href="/dummy">
-        <Image src="/twitter.svg" alt="twitter" width={20} height={20} className="cursor-pointer" />
+      <Link href="/dummy" aria-label="Twitter Account">
+        <FaTwitter className="cursor-pointer" size={20}/>
       </Link>
-      <Link href="/dummy">
-        <Image src="/facebook.svg" alt="facebook" width={20} height={20} className="cursor-pointer" />
+      <Link href="/dummy" aria-label="Facebook Account">
+        <FaFacebook className="cursor-pointer" size={20}/>
       </Link>
     </div>
   )

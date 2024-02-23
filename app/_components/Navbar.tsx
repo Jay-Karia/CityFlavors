@@ -1,15 +1,14 @@
 import Logo from "@/components/Logo";
 import Menu from "@/components/menu";
 import LinkGroup from "@/components/link-group";
-
 import { Button } from "@/components/ui/button";
+import { CiMenuBurger } from "react-icons/ci";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex min-h-14 items-center sm:justify-around justify-between mx-2 bg-transparent">
+    <div className="flex min-h-14 items-center sm:justify-around justify-between mx-2 bg-gray-50">
       <Logo />
       <div className="hidden sm:block">
         <LinkGroup
@@ -26,10 +25,9 @@ const Navbar = () => {
         <Button variant={"outline"} asChild><Link href="/register">Register</Link></Button>
       </div>
 
-      {/* Small Screen Navbar */}
       <div className="block sm:hidden">
         <Menu
-          trigger={<Image src="/menu.svg" alt="menu" width={20} height={20} />}
+          trigger={<CiMenuBurger size={15}/>}
           contents01={["Home", "Items", "About Us", "Contact Us"]}
           hrefs01={["/", "/items", "/about", "/contact"]}
           contents02={["Login", "Register"]}

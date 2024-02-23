@@ -6,7 +6,7 @@ import ProductReel from "@/app/_components/ProductReel";
 export default function Home() {
   return (
     <main className="h-screen">
-      {/* <HeroSection/> */}
+      <HeroSection />
     </main>
   );
 }

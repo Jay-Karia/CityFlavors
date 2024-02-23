@@ -2,7 +2,7 @@
 ## CityFlavors
 
 - [ ]  Home Page
-    - [ ]  Navbar
+    - [x]  Navbar
     - [ ]  Hero Section
     - [ ]  Fetch Products API
         - [ ]  All Products
@@ -11,11 +11,14 @@
         - [ ]  New Arrivals
         - [ ]  Special Offers
         - [ ]  Top Rated
-    - [ ]  Footer
+    - [x]  Footer
 - [ ]  Authentication
-    - [ ]  Login Page
-    - [ ]  Register Page
+    - [x]  Login Page
+    - [x]  Register Page
     - [ ]  Backend
+-  [x]  Error Pages
+    -  [x]  Dummy Page
+    -  [x]  404 Page
 - [ ]  Category Page
 - [ ]  All Products Page
     - [ ]  Search

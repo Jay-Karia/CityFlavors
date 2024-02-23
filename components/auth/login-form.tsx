@@ -45,7 +45,6 @@ const LoginForm = () => {
                                 <FormControl>
                                     <Input placeholder="Email" {...field} />
                                 </FormControl>
-                                <FormDescription>Enter your email address</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -59,13 +58,21 @@ const LoginForm = () => {
                                 <FormControl>
                                     <Input placeholder="Password" {...field} />
                                 </FormControl>
-                                <FormDescription>Enter your password</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <OAuthSocial />
-                    <Button style={{width: "100%"}} type="submit" variant={"colored"}>Submit</Button>
+                    <div className="flex gap-2 flex-col">
+                        <div className="flex justify-start">
+                            <Button type="button" variant="link" className="p-0" aria-label='Forgot Password'>
+                                <small className="text-sm font-medium text-slate-500 leading-none">Forgot Password?</small>
+                            </Button>
+                        </div>
+                        <div className="flex gap-5 flex-col">
+                            <OAuthSocial />
+                            <Button style={{ width: "100%" }} type="submit" variant={"colored"}>Submit</Button>
+                        </div>
+                    </div>
                 </form>
             </Form>
         </div>

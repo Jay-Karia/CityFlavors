@@ -46,7 +46,6 @@ const RegisterForm = () => {
                                 <FormControl>
                                     <Input placeholder="Name" {...field} />
                                 </FormControl>
-                                <FormDescription>Enter your name</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -60,7 +59,6 @@ const RegisterForm = () => {
                                 <FormControl>
                                     <Input placeholder="Email" {...field} />
                                 </FormControl>
-                                <FormDescription>Enter your email address</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -74,7 +72,6 @@ const RegisterForm = () => {
                                 <FormControl>
                                     <Input placeholder="Password" {...field} />
                                 </FormControl>
-                                <FormDescription>Enter your password</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}

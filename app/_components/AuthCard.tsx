@@ -1,6 +1,7 @@
 "use client"
 import LoginForm from "@/components/auth/login-form"
 import RegisterForm from "@/components/auth/register-form"
+import BackButton from "@/components/auth/back-button"
 
 type Props = {
 	header: string
@@ -20,6 +21,7 @@ const AuthCard = ({ header, subtitle, authType }: Props) => {
 			<div className="mt-5">
 				{authType === "login" ? <LoginForm /> : <RegisterForm />}
 			</div>
+			<BackButton authType={authType} />
 		</div>
 	)
 }

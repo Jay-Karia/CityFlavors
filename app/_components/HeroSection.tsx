@@ -13,8 +13,8 @@ import { LuDollarSign } from "react-icons/lu";
 
 const HeroSection = () => {
   return (
-    <div className="h-max bg-gray-50 flex justify-around -z-10 w-full">
-      <div className="mt-10 flex flex-col gap-5 ml-10">
+    <div className="h-max bg-gray-50 flex justify-around z-10 w-full">
+      <div className="mt-10 flex flex-col gap-5 ml-10 z-30">
 
         <Heading />
         <CallToAction />
@@ -25,7 +25,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="md:flex items-center justify-center hidden">
+      <div className="md:flex items-center justify-center md:relative absolute z-20 md:opacity-100 opacity-40">
         <Image src="/heroImage.png" alt="Hero Image" width={380} height={380} className="lg:block hidden" style={{aspectRatio: "0.87"}}/>
         <Image src="/heroImage.png" alt="Hero Image" width={300} height={300} className="lg:hidden block" style={{aspectRatio: "0.87"}} />
       </div>

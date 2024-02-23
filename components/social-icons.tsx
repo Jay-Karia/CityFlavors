@@ -6,7 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const SocialIcons = () => {
   return (
-    <div className="flex gap-5 mt-6">
+    <div className="flex gap-5">
       <Link href="/dummy" aria-label="Instagram Account">
         <FaInstagram className="cursor-pointer" size={20}/>
       </Link>

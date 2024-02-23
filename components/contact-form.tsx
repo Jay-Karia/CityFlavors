@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
+import SocialIcons from "./social-icons"
 
 const ContactForm = () => {
 
@@ -40,7 +41,7 @@ const ContactForm = () => {
     <div className="flex flex-col items-start p-5 w-full">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 w-full">
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
             <FormField
               control={form.control}
               name="firstName"
@@ -68,7 +69,7 @@ const ContactForm = () => {
               )}
             />
           </div>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
             <FormField
               control={form.control}
               name="email"
@@ -115,12 +116,16 @@ const ContactForm = () => {
                 <small className="text-sm font-medium text-slate-500 leading-none">Forgot Password?</small>
               </Button>
             </div>
-            <div className="flex gap-5 flex-col border-2">
+            <div className="flex gap-5 flex-col">
               <Button style={{ width: "100%" }} type="submit" variant={"colored"} >Submit</Button>
             </div>
           </div>
         </form>
       </Form>
+      {/* <div className="mt-5">
+        <h4 className="text-md font-semibold tracking-tight mb-3">Connect with us on social media</h4>
+        <SocialIcons />
+      </div> */}
     </div>
   )
 }

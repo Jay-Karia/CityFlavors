@@ -11,7 +11,9 @@ const Footer = () => {
         <small className="text-sm font-normal leading-none mt-5 sm:w-48 w-36">
           Bringing the Vibrant Tastes of the City to Your Doorstep
         </small>
-        <SocialIcons />
+        <div className="mt-6">
+          <SocialIcons />
+        </div>
       </div>
 
       <LinkGroup

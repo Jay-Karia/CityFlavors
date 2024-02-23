@@ -8,12 +8,12 @@ interface MiscCardProps {
 
 const MiscCard = ( { image, content } : MiscCardProps ) => {
     return (
-        <div className="flex md:flex-row flex-col justify-between h-max rounded-lg" style={{border: "1px solid black"}}>
-            <div className="md:w-2/5 md:flex hidden justify-center items-center border-r-2 border-black rounded-lg">
-                <Image src={image} alt="image" width={400} height={400} />
+        <div className="flex lg:flex-row flex-col justify-between rounded-lg" style={{border: "1px solid black"}}>
+            <div className="lg:w-2/5 flex justify-center items-center rounded-lg ">
+                <Image src={image} alt="image" width={400} height={400} className="rounded-lg"/>
             </div>
 
-            <div className="h-full md:w-3/5 w-full flex justify-start p-5">
+            <div className="h-full lg:w-3/5 w-full flex justify-start p-5">
                 {content}
             </div>
         </div>

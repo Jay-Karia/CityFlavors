@@ -6,7 +6,7 @@ interface Props {
 
 const ContactLayout = ({ children }: Props) => {
     return (
-        <div className="h-screen bg-background font-sans antialiased flex flex-col">
+        <div className="pt-5 h-full">
             {children}
         </div>
     )

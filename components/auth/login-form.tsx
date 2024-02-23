@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -70,7 +69,7 @@ const LoginForm = () => {
                         </div>
                         <div className="flex gap-5 flex-col">
                             <OAuthSocial />
-                            <Button style={{ width: "100%" }} type="submit" variant={"colored"}>Submit</Button>
+                            <Button style={{ width: "100%" }} type="submit" variant={"colored"}>Login</Button>
                         </div>
                     </div>
                 </form>

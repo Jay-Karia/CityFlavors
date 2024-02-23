@@ -6,7 +6,7 @@ interface Props {
 
 const AboutLayout = ({ children }: Props) => {
   return (
-    <div className="h-full flex flex-col">
+    <div className="">
             {children}
         </div>
   )

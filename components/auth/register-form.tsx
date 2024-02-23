@@ -77,7 +77,7 @@ const RegisterForm = () => {
                         )}
                     />
                     <OAuthSocial />
-                    <Button style={{width: "100%"}} type="submit" variant={"colored"}>Submit</Button>
+                    <Button style={{width: "100%"}} type="submit" variant={"colored"}>Register</Button>
                 </form>
             </Form>
         </div>

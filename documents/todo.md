@@ -3,7 +3,7 @@
 
 - [ ]  Home Page
     - [x]  Navbar
-    - [ ]  Hero Section
+    - [x]  Hero Section
     - [ ]  Fetch Products API
         - [ ]  All Products
         - [ ]  Specific Category
@@ -56,8 +56,8 @@
     - [ ]  Checkout Frontend
     - [ ]  Order Status Page
     - [ ]  Send email to admin
-- [ ]  About Us Page
-- [ ]  Contact Us Page
+- [x]  About Us Page
+- [x]  Contact Us Page
 - [ ]  Feedback
     - [ ]  Feedback API
     - [ ]  Feedback Frontend

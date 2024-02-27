@@ -22,10 +22,15 @@
 - [ ]  Category Page
 - [ ]  All Products Page
     - [ ]  Search
+    - [ ]  Search API
     - [ ]  Filter
+    - [ ]  Filter API
     - [ ]  Display all Products
+    - [ ]  All Products API
 - [ ]  Specific Product Page
+- [ ]  Specific Product API
 - [ ]  Profile
+    - [ ]  Profile API
     - [ ]  Edit Profile
         - [ ]  Edit Profile API
         - [ ]  Edit Profile Frontend
@@ -51,6 +56,7 @@
     - [ ]  Cart APIs
         - [ ]  Add Item
         - [ ]  Remove Item
+        - [ ]  Cart API
 - [ ]  Checkout
     - [ ]  Checkout API
     - [ ]  Checkout Frontend

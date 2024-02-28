@@ -8,6 +8,60 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
+  id       Int       @id @map("_id")
+  email    String    @unique
+  password String
+  name     String?
+  address  UserInfo?
+  Cart     Cart?
+  Order    Order?
+}
+
+model UserInfo {
+  id      String @id @map("_id")
+  userId  Int    @unique
+  user    User   @relation(fields: [userId], references: [id])
+  address String
+  city    String
+  pincode String
+}
+
+model Category {
+  id          String    @id @map("_id")
+  name        String    @unique
+  description String?
+  products    Product[]
+}
+
+model Cart {
+  id     String    @id @map("_id")
+  userId Int       @unique
+  user   User      @relation(fields: [userId], references: [id])
+  items  Product[]
+}
+
+model Product {
+  id          String    @id @map("_id")
+  name        String
+  description String?
+  price       Float
+  category    String?
+  image       String?
+  Category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  Cart        Cart?     @relation(fields: [cartId], references: [id])
+  cartId      String?
+  Order       Order?    @relation(fields: [orderId], references: [id])
+  orderId     String?
+}
+
+model Order {
+  id         String    @id @map("_id")
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id])
+  items      Product[]
+  status     String
+  totalPrice Float
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 }

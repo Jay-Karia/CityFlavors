@@ -111,11 +111,6 @@ const ContactForm = () => {
               )}
             />
           <div className="flex gap-2 flex-col">
-            <div className="flex justify-start">
-              <Button type="button" variant="link" className="p-0" aria-label='Forgot Password'>
-                <small className="text-sm font-medium text-slate-500 leading-none">Forgot Password?</small>
-              </Button>
-            </div>
             <div className="flex gap-5 flex-col">
               <Button style={{ width: "100%" }} type="submit" variant={"colored"} >Submit</Button>
             </div>

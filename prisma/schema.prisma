@@ -12,8 +12,6 @@ model Category {
   description String
   name        String
   products    String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
 
 model Product {
@@ -23,8 +21,6 @@ model Product {
   image       String
   name        String
   price       Float
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
 
 model User {

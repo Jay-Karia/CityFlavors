@@ -4,11 +4,22 @@ import checkAdmin from "@/lib/checkAdmin";
 
 // Get specific product
 export async function GET(request: NextRequest, {params}: {params: {id: string}}) {
-    console.log(params.id)
+    const id = params.id
+    let response = {}
 
-    return NextResponse.json({
-        msg: "Get specific product",
-    });
+    try {
+        const product = await db.product.findUnique({
+            where: {
+                id: id
+            }
+        });
+        response = {product: product, msg: "Product fetched successfully", status: "success"};
+    } catch (error : any) {
+        response = {error: error.message, msg: "Could not fetch product", status: "error"};
+    }
+
+
+    return NextResponse.json(response);
 }
 
 // update product

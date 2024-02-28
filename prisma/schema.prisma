@@ -14,12 +14,16 @@ model Product {
   price       Float
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String   @map("_category_id") @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Category {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   products Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model User {
@@ -29,6 +33,8 @@ model User {
   password  String
   address   Address @relation(fields: [addressId], references: [id])
   addressId String  @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Address {

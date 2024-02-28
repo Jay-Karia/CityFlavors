@@ -13,6 +13,7 @@ const checkAdmin = async (id: string | null) => {
         }
     } catch {
         console.log("some error occurred")
+        isAdmin = false;
     }
     return isAdmin;
 };

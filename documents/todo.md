@@ -4,9 +4,9 @@
 - [ ]  Home Page
     - [x]  Navbar
     - [x]  Hero Section
-    - [ ]  Fetch Products API
-        - [ ]  All Products
-        - [ ]  Specific Category
+    - [x]  Fetch Products API
+        - [x]  All Products
+        - [x]  Specific Category
     - [ ]  Special Categories
         - [ ]  New Arrivals
         - [ ]  Special Offers
@@ -26,13 +26,13 @@
     - [ ]  Filter
     - [ ]  Filter API
     - [ ]  Display all Products
-    - [ ]  All Products API
+    - [x]  All Products API
 - [ ]  Specific Product Page
-- [ ]  Specific Product API
+- [x]  Specific Product API
 - [ ]  Profile
     - [ ]  Profile API
     - [ ]  Edit Profile
-        - [ ]  Edit Profile API
+        - [x]  Edit Profile API
         - [ ]  Edit Profile Frontend
     - [ ]  Order History
         - [ ]  Order History API

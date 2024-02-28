@@ -6,6 +6,7 @@ const productSchema = z.object({
     price: z.number().min(1, {message: "Minimum price should be 1"}),
     image: z.string().includes("https://", {message: "Provide a valid image url"}),
     category: z.string().min(1, {message: "Category is required"}),
+    isAdmin: z.boolean().optional(),
 })
 
 export default productSchema;

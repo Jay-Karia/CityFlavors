@@ -7,48 +7,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       Int       @id @map("_id")
-  email    String    @unique
-  password String
-  name     String?
-  address  UserInfo?
-  Cart     Cart?
-  Order    Order?
-}
-
-model UserInfo {
-  id      String @id @map("_id")
-  userId  Int    @unique
-  user    User   @relation(fields: [userId], references: [id])
-  address String
-  city    String
-  pincode String
-}
-
 model Category {
-  id          String    @id @map("_id")
-  name        String    @unique
-  description String?
-  products    Product[]
-}
-
-model Cart {
-  id     String    @id @map("_id")
-  userId Int       @unique
-  user   User      @relation(fields: [userId], references: [id])
-  items  Product[]
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  name        String
+  products    String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Product {
-  id          String    @id @map("_id")
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  category    String @db.ObjectId
+  description String
+  image       String
   name        String
-  description String?
   price       Float
-  category    String?
-  image       String?
-  Category    Category? @relation(fields: [categoryId], references: [id])
-  categoryId  String?
-  Cart        Cart?     @relation(fields: [cartId], references: [id])
-  cartId      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  address  String  @db.ObjectId
+  email    String  @unique
+  isAdmin  Boolean
+  name     String
+  password String
+}
+
+model UserInfo {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  address String
+  city    String
+  pincode String
+  userId  String @unique @db.ObjectId
 }

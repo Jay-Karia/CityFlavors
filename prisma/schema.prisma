@@ -7,35 +7,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Category {
+model Product {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  description String
   name        String
-  products    String[]
+  description String
+  price       Float
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String   @map("_category_id") @db.ObjectId
 }
 
-model Product {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  category    String @db.ObjectId
-  description String
-  image       String
-  name        String
-  price       Float
+model Category {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  products Product[]
 }
 
 model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  address  String  @db.ObjectId
-  email    String  @unique
-  isAdmin  Boolean
-  name     String
-  password String
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  username  String  @unique
+  email     String  @unique
+  password  String
+  address   Address @relation(fields: [addressId], references: [id])
+  addressId String  @db.ObjectId
 }
 
-model UserInfo {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  address String
-  city    String
-  pincode String
-  userId  String @unique @db.ObjectId
+model Address {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  street     String
+  city       String
+  state      String
+  postalCode String
+  User       User[]
 }

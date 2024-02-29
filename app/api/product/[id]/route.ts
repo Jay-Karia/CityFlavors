@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 import checkAdmin from "@/lib/checkAdmin";
+import updateProductsId from "@/lib/updateProductsId";
 
 // Get specific product
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
@@ -99,11 +100,15 @@ export async function DELETE(
     }
 
     try {
-        await db.product.delete({
+        const deletedProduct = await db.product.delete({
             where: {
                 id: id,
             },
         });
+
+        // Update the productsId array in the category
+        await updateProductsId(deletedProduct, true);
+
     } catch (error: any) {
         return NextResponse.json({
             error: error.message,
@@ -112,7 +117,6 @@ export async function DELETE(
         });
     }
 
-    // TODO: Update the productsId array in the category
 
     return NextResponse.json({
         msg: "Product deleted successfully",

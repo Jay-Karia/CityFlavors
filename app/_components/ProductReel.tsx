@@ -45,7 +45,7 @@ const ProductReel = ({ title, category, carousel }: ProductReelProps) => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center justify-center h-full min-h-[320px]">
       {products.length > 0 && (
         <div className="w-full flex flex-col">
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-center">

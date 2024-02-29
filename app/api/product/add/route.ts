@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 import checkAdmin from "@/lib/checkAdmin";
+import updateProductsId from "@/lib/updateProductsId";
 
 export async function POST(request: NextRequest) {
     const userId = request.headers.get("x-user-id");
@@ -22,17 +23,27 @@ export async function POST(request: NextRequest) {
     }
 
     const product = {
-        name,
-        description,
-        price,
-        image,
-        categorySlug,
+        name: name,
+        description: description,
+        price: price,
+        image: image,
+        categorySlug: categorySlug,
     };
-    
+
     try {
-        await db.product.create({
+        const newProduct = await db.product.create({
             data: product,
         });
+
+        // Update the productsId array in the category
+        await updateProductsId(newProduct);
+
+        return NextResponse.json({
+            newProduct,
+            msg: "Product added successfully",
+            status: "success",
+        });
+
     } catch (error: any) {
         return NextResponse.json({
             error: error.message,
@@ -40,12 +51,4 @@ export async function POST(request: NextRequest) {
             status: "error",
         });
     }
-
-    // TODO: Update the productsId array in the category
-
-    return NextResponse.json({
-        product,
-        msg: "Product added successfully",
-        status: "success",
-    });
 }

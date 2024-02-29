@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 import checkAdmin from "@/lib/checkAdmin";
+import checkSlugValidity from "@/lib/checkSlugValidity";
 
 // Get specific category by id
 export async function GET(request: NextRequest, {params}: { params: { id: string } }) {
@@ -19,13 +20,13 @@ export async function GET(request: NextRequest, {params}: { params: { id: string
 
 // Update specific category by id
 export async function PUT(request: NextRequest, {params}: { params: { id: string } }) {
-    // TODO: check the validity of the category slug
+
     const { name, slug } = await request.json();
     const isAdmin = await checkAdmin(request.headers.get("x-user-id"));
 
     if (!isAdmin) {
         return NextResponse.json({
-            msg: "You are not authorized to update a product",
+            msg: "You are not authorized to update a category",
             status: "error",
         });
     }
@@ -36,6 +37,16 @@ export async function PUT(request: NextRequest, {params}: { params: { id: string
             status: "error",
         });
     }
+
+    // check the validity of the category slug
+    const slugValidity = await checkSlugValidity(slug);
+    if (!slugValidity) {
+        return NextResponse.json({
+            msg: "Invalid slug",
+            status: "error",
+        });
+    }
+
 
     const data = {
         name,
@@ -50,13 +61,13 @@ export async function PUT(request: NextRequest, {params}: { params: { id: string
     } catch (error: any) {
         return NextResponse.json({
             error: error.message,
-            msg: "Could not update product",
+            msg: "Could not update category",
             status: "error",
         });
     }
 
     return NextResponse.json({
-        msg: "Product updated successfully",
+        msg: "Category updated successfully",
         status: "success",
     });
 }

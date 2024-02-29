@@ -8,33 +8,32 @@ datasource db {
 }
 
 model Product {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  description String
-  price       Float
-  image       String
-  category    Category[]  @relation(fields: [categoryId], references: [id])
-  categoryId  String[]   @map("_category_id") @db.ObjectId
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  description  String
+  price        Float
+  image        String
+  categorySlug String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Category {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  products Product[] @relation(fields: [productsId], references: [id])
-  productsId String[]@map("_category_id") @db.ObjectId
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  slug       String
+  productsId String[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model User {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  username  String  @unique
-  email     String  @unique
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  username  String   @unique
+  email     String   @unique
   password  String
   address   Address? @relation(fields: [addressId], references: [id])
-  addressId String  @unique @db.ObjectId
+  addressId String   @unique @db.ObjectId
   isAdmin   Boolean
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

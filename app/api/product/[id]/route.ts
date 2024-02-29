@@ -36,7 +36,7 @@ export async function PUT(
 ) {
     const userId = request.headers.get("x-user-id");
     const id = params.id;
-    const { name, description, price, image, category } = await request.json();
+    const { name, description, price, image, categorySlug } = await request.json();
     const isAdmin = await checkAdmin(userId);
 
     if (!isAdmin) {
@@ -46,7 +46,7 @@ export async function PUT(
         });
     }
 
-    if (!name || !description || !price || !image || !category) {
+    if (!name || !description || !price || !image || !categorySlug) {
         return NextResponse.json({
             msg: "All fields are required",
             status: "error",
@@ -58,7 +58,7 @@ export async function PUT(
         description,
         price,
         image,
-        category,
+        categorySlug,
     };
 
     try {
@@ -111,6 +111,8 @@ export async function DELETE(
             status: "error",
         });
     }
+
+    // TODO: Update the productsId array in the category
 
     return NextResponse.json({
         msg: "Product deleted successfully",

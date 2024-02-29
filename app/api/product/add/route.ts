@@ -4,7 +4,7 @@ import checkAdmin from "@/lib/checkAdmin";
 
 export async function POST(request: NextRequest) {
     const userId = request.headers.get("x-user-id");
-    const { name, description, price, image, categoryId } = await request.json();
+    const { name, description, price, image, categorySlug } = await request.json();
     const isAdmin = await checkAdmin(userId);
 
     if (!isAdmin) {
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         });
     }
 
-    if (!name || !description || !price || !image || !categoryId) {
+    if (!name || !description || !price || !image || !categorySlug) {
         return NextResponse.json({
             msg: "All fields are required",
             status: "error",
@@ -22,13 +22,13 @@ export async function POST(request: NextRequest) {
     }
 
     const product = {
-        name: name,
-        description: description,
-        price: price,
-        image: image,
-        categoryId: categoryId,
+        name,
+        description,
+        price,
+        image,
+        categorySlug,
     };
-
+    
     try {
         await db.product.create({
             data: product,
@@ -41,7 +41,10 @@ export async function POST(request: NextRequest) {
         });
     }
 
+    // TODO: Update the productsId array in the category
+
     return NextResponse.json({
+        product,
         msg: "Product added successfully",
         status: "success",
     });

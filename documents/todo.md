@@ -1,16 +1,16 @@
 # TODOs
 ## CityFlavors
 
-- [ ]  Home Page
+- [x]  Home Page
     - [x]  Navbar
     - [x]  Hero Section
     - [x]  Fetch Products API
         - [x]  All Products
         - [x]  Specific Category
-    - [ ]  Special Categories
-        - [ ]  New Arrivals
-        - [ ]  Special Offers
-        - [ ]  Top Rated
+    - [x]  Special Categories
+        - [x]  New Arrivals
+        - [x]  Special Offers
+        - [x]  Top Rated
     - [x]  Footer
 - [ ]  Authentication
     - [x]  Login Page
@@ -32,7 +32,7 @@
 - [ ]  Profile
     - [ ]  Profile API
     - [ ]  Edit Profile
-        - [x]  Edit Profile API
+        - [ ]  Edit Profile API
         - [ ]  Edit Profile Frontend
     - [ ]  Order History
         - [ ]  Order History API

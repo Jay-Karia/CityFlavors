@@ -18,35 +18,56 @@ interface ProductReelProps {
 
 const ProductReel = ({ title, category, carousel }: ProductReelProps) => {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // fetch product from database
-
-  }, [products])
+    const fetchProducts = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch(`/api/product/`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "x-category": category,
+          },
+        })
+        const data = await response.json()
+        setProducts(data.products)
+      } catch (error) {
+        console.error("Error fetching products", error);
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchProducts()
+  }, [])
 
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-center">
-        {title}
-      </h4>
-      {/* Carousel */}
+    <div className="flex flex-col items-center justify-center h-full">
       {products.length > 0 && (
-        <div>
-          <Carousel className="w-full max-w-sm my-10">
-            <CarouselContent className="-ml-1">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                  <ProductItem product={products[index]} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="w-full flex flex-col">
+          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-center">
+            {title}
+          </h4>
+          <div className="h-full">
+            <Carousel className="my-2 mx-20">
+              <CarouselContent className="-ml-1">
+                {products.map((e, index) => {
+                  return (
+                    <CarouselItem key={index} className="pl-1 mx-4 basis-1/6">
+                      <ProductItem product={products[index]} />
+                    </CarouselItem>
+                  )
+                })}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
 
-          {/* Grid */}
+            {/* Grid */}
+          </div>
         </div>
       )}
     </div>

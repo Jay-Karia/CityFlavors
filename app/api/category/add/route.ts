@@ -4,6 +4,7 @@ import checkAdmin from "@/lib/checkAdmin";
 
 // Add new category
 export async function POST(request: NextRequest) {
+    // TODO: check the validity of the category slug
     let response = {};
     const { name, slug } = await request.json();
     const isAdmin = await checkAdmin(request.headers.get("x-user-id"));

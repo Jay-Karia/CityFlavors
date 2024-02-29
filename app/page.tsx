@@ -5,10 +5,10 @@ import ProductReel from "./_components/ProductReel";
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className="h-max flex flex-col">
       <HeroSection />
 
-      <div className="flex flex-col space-y-10 mt-5">
+      <div className="h-full flex flex-col my-10 space-y-10">
         <ProductReel title="New Arrivals" category={"newArrivals"} carousel={true} />
         <ProductReel title="Top Rated" category={"topRated"} carousel={true} />
         <ProductReel title="Best Offers" category={"bestOffers"} carousel={true} />

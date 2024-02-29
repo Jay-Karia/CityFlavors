@@ -3,7 +3,7 @@ import db from "@/lib/db";
 import checkAdmin from "@/lib/checkAdmin";
 
 // Get specific product
-export async function GET({ params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
     const id = params.id;
     let response = {};
 

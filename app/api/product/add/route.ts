@@ -4,7 +4,7 @@ import checkAdmin from "@/lib/checkAdmin";
 
 export async function POST(request: NextRequest) {
     const userId = request.headers.get("x-user-id");
-    const { name, description, price, image, category } = await request.json();
+    const { name, description, price, image, categoryId } = await request.json();
     const isAdmin = await checkAdmin(userId);
 
     if (!isAdmin) {
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         });
     }
 
-    if (!name || !description || !price || !image || !category) {
+    if (!name || !description || !price || !image || !categoryId) {
         return NextResponse.json({
             msg: "All fields are required",
             status: "error",
@@ -22,11 +22,11 @@ export async function POST(request: NextRequest) {
     }
 
     const product = {
-        name,
-        description,
-        price,
-        image,
-        category,
+        name: name,
+        description: description,
+        price: price,
+        image: image,
+        categoryId: categoryId,
     };
 
     try {

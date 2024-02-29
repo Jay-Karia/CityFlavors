@@ -12,8 +12,9 @@ model Product {
   name        String
   description String
   price       Float
-  category    Category @relation(fields: [categoryId], references: [id])
-  categoryId  String   @map("_category_id") @db.ObjectId
+  image       String
+  category    Category[]  @relation(fields: [categoryId], references: [id])
+  categoryId  String[]   @map("_category_id") @db.ObjectId
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -21,7 +22,8 @@ model Product {
 model Category {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name     String
-  products Product[]
+  products Product[] @relation(fields: [productsId], references: [id])
+  productsId String[]@map("_category_id") @db.ObjectId
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
@@ -31,8 +33,9 @@ model User {
   username  String  @unique
   email     String  @unique
   password  String
-  address   Address @relation(fields: [addressId], references: [id])
-  addressId String  @db.ObjectId
+  address   Address? @relation(fields: [addressId], references: [id])
+  addressId String  @unique @db.ObjectId
+  isAdmin   Boolean
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -43,5 +46,5 @@ model Address {
   city       String
   state      String
   postalCode String
-  User       User[]
+  User       User?
 }

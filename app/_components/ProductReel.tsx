@@ -3,8 +3,6 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import ProductItem from "@/components/product-item"
 
-import { cn } from "@/lib/utils"
-
 import {
   Carousel,
   CarouselContent,

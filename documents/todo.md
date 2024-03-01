@@ -19,12 +19,12 @@
 -  [x]  Error Pages
     -  [x]  Dummy Page
     -  [x]  404 Page
-- [ ]  Category Page
+- [x]  Category Page
 - [ ]  All Products Page
     - [ ]  Search
-    - [ ]  Search API
     - [ ]  Filter
-    - [ ]  Filter API
+    - [x]  Search Logic
+    - [x]  Filter Logic
     - [x]  Display all Products
     - [x]  All Products API
 - [ ]  Specific Product Page

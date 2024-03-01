@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import ProductCard from "@/components/product-card"
 import Search from "@/components/search-component"
+import Filter from "@/components/filter-component"
 
 interface Product {
   id: string
@@ -17,6 +18,10 @@ const ItemsPage = () => {
 
   const [products, setProducts] = useState([] as Product[])
   const [message, setMessage] = useState("Loading products..." as string | null)
+
+  const updateProducts = (data: Product[]) => {
+    setProducts(data)
+  }
 
   const sanitizeData = (data: any) => {
     return data.products.map((product: any) => {
@@ -64,7 +69,10 @@ const ItemsPage = () => {
         All Items
       </h3>
 
-      <Search />
+      <div className="flex space-x-5 items-center my-4 w-max">
+        <Search data={products} updateProducts={updateProducts} />
+        <Filter data={products} updateProducts={updateProducts} />
+      </div>
 
       <div className="flex flex-col">
         {products.length > 0 ? (

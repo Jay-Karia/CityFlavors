@@ -25,7 +25,7 @@ const ProductCard = ({ product, index }: { product: Product, index: number }) =>
             className="w-16 h-16 rounded-md"
           />
           <div>
-            <Link href={`/items/${product.id}`}>
+            <Link href={`/item/${product.id}`}>
               <p className="text-lg font-semibold hover:underline hover:underline-offset-4">{product.name}</p>
             </Link>
             <div className="flex space-x-2 items-center">

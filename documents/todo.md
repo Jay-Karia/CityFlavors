@@ -27,7 +27,7 @@
     - [x]  Filter Logic
     - [x]  Display all Products
     - [x]  All Products API
-- [ ]  Specific Product Page
+- [x]  Specific Product Page
 - [x]  Specific Product API
 - [ ]  Profile
     - [ ]  Profile API

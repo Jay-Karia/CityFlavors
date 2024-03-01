@@ -25,7 +25,7 @@
     - [ ]  Search API
     - [ ]  Filter
     - [ ]  Filter API
-    - [ ]  Display all Products
+    - [x]  Display all Products
     - [x]  All Products API
 - [ ]  Specific Product Page
 - [x]  Specific Product API

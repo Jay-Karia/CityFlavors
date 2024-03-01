@@ -6,7 +6,7 @@ interface Props {
 
 const ItemsLayout = ({ children }: Props) => {
     return (
-        <div className="h-screen flex flex-col">
+        <div className="h-max flex flex-col">
             {children}
         </div>
     )

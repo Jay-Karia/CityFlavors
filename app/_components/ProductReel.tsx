@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import ProductItem from "@/components/product-item"
 
+import { cn } from "@/lib/utils"
+
 import {
   Carousel,
   CarouselContent,
@@ -17,9 +19,10 @@ interface ProductReelProps {
   title: string
   category: string
   carousel: boolean
+  textAlign?: "center" | "left" | "right"
 }
 
-const ProductReel = ({ title, category, carousel }: ProductReelProps) => {
+const ProductReel = ({ title, category, carousel, textAlign = "center" }: ProductReelProps, { ...props }) => {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false)
@@ -48,10 +51,10 @@ const ProductReel = ({ title, category, carousel }: ProductReelProps) => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-[320px]">
+    <div className="flex flex-col items-center justify-center h-full" {...props}>
       {products.length > 0 && (
         <div className="w-full flex flex-col">
-          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-center">
+          <h4 className={`scroll-m-20 text-xl font-semibold tracking-tight text-${textAlign}`}>
             {title}
           </h4>
 

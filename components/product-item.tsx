@@ -1,16 +1,8 @@
-import { Button } from "./ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-
-
-import { CiShoppingCart } from "react-icons/ci";
+import AddToCartButton from "./add-to-cart";
 
 interface ProductItemProps {
   product: {
+    id:string
     name: string
     price: number
     categorySlug: string
@@ -30,18 +22,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           <p className="font-medium text-gray-900">₹{product.price}</p>
         </div>
         <div className="px-6 py-3 rounded-b-lg flex items-end">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <Button aria-label="Add to Cart" variant={"ghost"} size={"icon"} className="pr-0 mr-0">
-                  <CiShoppingCart size={25} />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left" style={{ backgroundColor: "gray" }}>
-                <p>Add to Cart</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <AddToCartButton tooltip={true} product={product}/>
         </div>
       </div>
     </div>

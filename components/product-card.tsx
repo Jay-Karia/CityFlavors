@@ -2,6 +2,7 @@ import { CiShoppingCart } from "react-icons/ci"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { badgeVariants } from "./ui/badge"
+import AddToCartButton from "./add-to-cart"
 
 interface Product {
     id: string
@@ -13,6 +14,7 @@ interface Product {
 }
 
 const ProductCard = ({ product, index }: { product: Product, index: number }) => {
+
     return (
       <div
         key={index}
@@ -36,9 +38,7 @@ const ProductCard = ({ product, index }: { product: Product, index: number }) =>
         </div>
         <div className="flex flex-row items-center space-x-4">
           <p className="text-lg font-semibold">₹{product.price}</p>
-          <Button aria-label="Add to Cart" variant={"outline"} size={"icon"} className="pr-0 mr-0">
-            <CiShoppingCart size={25} />
-          </Button>
+          <AddToCartButton tooltip={false} product={product}/>
         </div>
       </div>
     )

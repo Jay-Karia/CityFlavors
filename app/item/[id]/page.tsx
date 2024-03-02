@@ -14,6 +14,7 @@ interface Product {
   description: string
   image: string
   categorySlug: string
+  quantity?: number
 }
 
 type Props = {
@@ -51,6 +52,34 @@ const ItemPage = ({ params }: Props) => {
 
   }, [])
 
+  const user = "65dfef091cd06042c2d3bc44";
+
+  const handleAddToCart = async (product: Product) => {
+    product.quantity = 1
+    try {
+      const response = await fetch('/api/cart/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: user,
+          productId: product.id,
+          quantity: product.quantity,
+          amount: product.price,
+          name: product.name,
+          image: product.image,
+          description: product.description
+        })
+      })
+      const data = await response.json()
+      console.log(data)
+
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className="h-full flex flex-col lg:items-center lg:ml-0 items-start p-2 mb-10">
       {loading ? <LoadingComponent /> :
@@ -77,7 +106,7 @@ const ItemPage = ({ params }: Props) => {
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <Button variant="default" className="w-full">
+                <Button variant="default" className="w-full" onClick={()=>{handleAddToCart(product)}}>
                   Add to Cart
                 </Button>
                 <p className="leading-7 [&:not(:first-child)]:mt-6 w-max">

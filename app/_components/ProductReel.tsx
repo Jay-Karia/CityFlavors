@@ -71,7 +71,7 @@ const ProductReel = ({ title, category, carousel, textAlign = "center" }: Produc
                 {products.map((e, index) => {
                   return (
                     <CarouselItem key={index} className="pl-1 mx-4 basis-1/1 sm:basis-auto md:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5">
-                      <ProductItem product={products[index]} />
+                      <ProductItem product={e} />
                     </CarouselItem>
                   )
                 })}

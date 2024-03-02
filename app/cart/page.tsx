@@ -15,14 +15,15 @@ type CartType = {
 
 const CartPage = () => {
 
-    // TODO: update quantity of items in cart
-    // TODO: remove items from cart
-    // TODO: make add to cart buttons work
+    // [ ] update quantity of items in cart
+    // [x] remove items from cart
+    // [x] make add to cart buttons work
 
     const [cart, setCart] = useState(null as CartType | null)
     const [cartItems, setCartItems] = useState(null)
     const [loading, setLoading] = useState(true)
 
+    // get session from next auth
     const user = "65dfef091cd06042c2d3bc44";
     const { toast } = useToast()
 
@@ -77,7 +78,7 @@ const CartPage = () => {
                             <h3 className="scroll-m-20 text-3xl font-semibold tracking-tight">
                                 Cart
                             </h3>
-                            <CartItems cartItems={cartItems} />
+                            {cartItems ? <CartItems cartItems={cartItems} cartId={cart.id} /> : <p>No items in cart</p>}
                         </div>
                         <div className="lg:w-2/5 w-full mx-5 flex flex-col p-5 rounded-lg bg-slate-100 h-max mt-14">
                             <h3 className="scroll-m-20 text-3xl font-semibold tracking-tight">

@@ -1,6 +1,31 @@
-import React from 'react'
+"use client"
 
-const CartItems = ({ cartItems }: { cartItems: any }) => {
+import { useRouter } from "next/navigation";
+import { MdDelete } from "react-icons/md";
+
+const CartItems = ({ cartItems, cartId }: { cartItems: any, cartId: string }) => {
+
+    const router = useRouter()
+
+    const handleRemove = async (id: string) => {
+        try {
+            const response = await fetch('/api/cart/remove', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cartId: cartId,
+                    productId: id
+                })
+            })
+            const data = await response.json()
+            router.refresh();
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <div className="mt-5">
             {cartItems.map((item: any, index: number) => {
@@ -18,8 +43,11 @@ const CartItems = ({ cartItems }: { cartItems: any }) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="flex flex-col gap-2">
                             <p className="text-sm font-semibold">₹{item.price}</p>
+                            <button className="text-gray-500 bg-gray-100 px-2 py-1 rounded-md" onClick={() => { handleRemove(item.id) }}>
+                                <MdDelete />
+                            </button>
                         </div>
                     </div>
                 )

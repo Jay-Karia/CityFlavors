@@ -18,7 +18,7 @@ const ItemsPage = () => {
 
   const [products, setProducts] = useState([] as Product[])
   const [message, setMessage] = useState("Loading products..." as string | null)
-  // TODO: Filter and search products
+  // [ ] Filter and search products
 
   const updateProducts = (data: Product[]) => {
     setProducts(data)

@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
         price: price,
         image: image,
         categorySlug: categorySlug,
-    };
+    } as { name: string; description: string; price: number; image: string; categorySlug: string };
 
     try {
         const newProduct = await db.product.create({

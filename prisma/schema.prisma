@@ -51,7 +51,7 @@ model Address {
 model Cart {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   userId    String   @unique @db.ObjectId
-  productId String[]
+  productId String[] @unique @db.ObjectId
   quantity  Int[]
   amount    Float
   createdAt DateTime @default(now())

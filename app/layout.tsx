@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed as FontSans, Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster"
+
 import "./globals.css";
 
 import Navbar from "@/app/_components/Navbar";
@@ -31,6 +33,7 @@ export default function RootLayout({
           <Navbar/>
             {children}
           <Footer/>
+          <Toaster />
         </body>
     </html>
   );

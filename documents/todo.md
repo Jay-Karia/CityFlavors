@@ -50,9 +50,8 @@
     - [ ]  View all Orders
         - [ ]  View all Orders API
         - [ ]  View all Orders Frontend
-- [ ]  Cart
-    - [ ]  Cart Page
-    - [ ]  Cart Drawer
+- [x]  Cart
+    - [x]  Cart Page
     - [x]  Cart APIs
         - [x]  Add Item
         - [x]  Remove Item
@@ -64,6 +63,3 @@
     - [ ]  Send email to admin
 - [x]  About Us Page
 - [x]  Contact Us Page
-- [ ]  Feedback
-    - [ ]  Feedback API
-    - [ ]  Feedback Frontend

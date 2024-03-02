@@ -16,6 +16,7 @@ model Product {
   categorySlug String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  cart         String   @db.ObjectId
 }
 
 model Category {

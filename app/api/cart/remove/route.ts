@@ -49,8 +49,6 @@ export async function DELETE(request: NextRequest) {
 
         delete (cart as { id?: any }).id;
 
-        console.log(cart)
-
         await db.cart.update({
             where: {
                 id: cartId

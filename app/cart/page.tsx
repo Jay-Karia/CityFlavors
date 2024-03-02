@@ -14,11 +14,6 @@ type CartType = {
 }
 
 const CartPage = () => {
-
-    // [ ] update quantity of items in cart
-    // [x] remove items from cart
-    // [x] make add to cart buttons work
-
     const [cart, setCart] = useState(null as CartType | null)
     const [cartItems, setCartItems] = useState(null)
     const [loading, setLoading] = useState(true)

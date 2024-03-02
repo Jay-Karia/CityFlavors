@@ -20,9 +20,9 @@
     -  [x]  Dummy Page
     -  [x]  404 Page
 - [x]  Category Page
-- [ ]  All Products Page
-    - [ ]  Search
-    - [ ]  Filter
+- [x]  All Products Page
+    - [x]  Search
+    - [x]  Filter
     - [x]  Search Logic
     - [x]  Filter Logic
     - [x]  Display all Products
@@ -56,7 +56,7 @@
         - [x]  Add Item
         - [x]  Remove Item
         - [x]  View Cart API
-- [ ]  Checkout
+- [ ]  Checkout (Stripe)
     - [ ]  Checkout API
     - [ ]  Checkout Frontend
     - [ ]  Order Status Page

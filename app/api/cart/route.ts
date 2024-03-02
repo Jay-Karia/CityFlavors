@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     try {
         const cartItems = await db.cart.findMany({
             where: {
-                userId: user.id,
+                userId: user,
             },
         });
         

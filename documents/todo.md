@@ -53,10 +53,10 @@
 - [ ]  Cart
     - [ ]  Cart Page
     - [ ]  Cart Drawer
-    - [ ]  Cart APIs
-        - [ ]  Add Item
-        - [ ]  Remove Item
-        - [ ]  Cart API
+    - [x]  Cart APIs
+        - [x]  Add Item
+        - [x]  Remove Item
+        - [x]  View Cart API
 - [ ]  Checkout
     - [ ]  Checkout API
     - [ ]  Checkout Frontend

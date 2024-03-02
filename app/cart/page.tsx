@@ -15,49 +15,18 @@ type CartType = {
 
 const CartPage = () => {
 
+    // TODO: update quantity of items in cart
+    // TODO: remove items from cart
+    // TODO: make add to cart buttons work
+
     const [cart, setCart] = useState(null as CartType | null)
-    // TODO: Fetch cart items
-    const [cartItems, setCartItems] = useState([
-        {
-            id: "1",
-            name: "Product 1",
-            price: 100,
-            description: "Product 1 description",
-            image: "https://via.placeholder.com/150",
-            categorySlug: "category-1"
-        },
-        {
-            id: "2",
-            name: "Product 2",
-            price: 200,
-            description: "Product 2 description",
-            image: "https://via.placeholder.com/150",
-            categorySlug: "category-2"
-        },
-        {
-            id: "3",
-            name: "Product 3",
-            price: 300,
-            description: "Product 3 description",
-            image: "https://via.placeholder.com/150",
-            categorySlug: "category-3"
-        },
-        {
-            id: "4",
-            name: "Product 4",
-            price: 400,
-            description: "Product 4 description",
-            image: "https://via.placeholder.com/150",
-            categorySlug: "category-4"
-        }
-    ])
+    const [cartItems, setCartItems] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const user = "65dfef091cd06042c2d3bc41";
+    const user = "65dfef091cd06042c2d3bc44";
     const { toast } = useToast()
 
     useEffect(() => {
-        // Fetch cart
         async function fetchCart() {
             try {
                 setLoading(true)
@@ -72,6 +41,13 @@ const CartPage = () => {
 
                 })
                 const data = await response.json()
+                // @ts-ignore
+                let productItems = []
+                data.data[0].productId.map((id: string, index: number) => {
+                    productItems.push({ id: id, quantity: data.data[0].quantity[index], name: data.data[0].name[index], price: data.data[0].price[index], image: data.data[0].image[index], description: data.data[0].description[index] })
+                })
+                // @ts-ignore
+                setCartItems(productItems)
 
                 setCart(data.data[0])
                 toast({

@@ -45,6 +45,10 @@ export async function DELETE(request: NextRequest) {
         const finalAmount = cart.amount - productAmount;
         cart.productId.splice(productIndex, 1);
         cart.quantity.splice(productIndex, 1);
+        cart.image.splice(productIndex, 1)
+        cart.description.splice(productIndex, 1)
+        cart.name.splice(productIndex, 1)
+        cart.price.splice(productIndex, 1)
         cart.amount = finalAmount;
 
         delete (cart as { id?: any }).id;

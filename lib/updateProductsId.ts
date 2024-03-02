@@ -38,14 +38,16 @@ const updateProductsId = async (product: Product, isDelete: boolean = false) => 
     }
 
     // update the productsId array in the category
-    await db.category.update({
-        where: {
-            id: Category?.id,
-        },
-        data: {
-            productsId: categoryProducts,
-        },
-    });
+    if (Category) {
+        await db.category.update({
+            where: {
+                id: Category.id,
+            },
+            data: {
+                productsId: categoryProducts,
+            },
+        });
+    }
 }
 
 export default updateProductsId;

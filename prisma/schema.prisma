@@ -16,7 +16,6 @@ model Product {
   categorySlug String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  cart         String   @db.ObjectId
 }
 
 model Category {
@@ -50,11 +49,15 @@ model Address {
 }
 
 model Cart {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String   @unique @db.ObjectId
-  productId String[] @db.ObjectId
-  quantity  Int[]
-  amount    Float
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @unique @db.ObjectId
+  productId   String[] @db.ObjectId
+  quantity    Int[]
+  image       String[]
+  description String[]
+  name        String[]
+  price       Int[]
+  amount      Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

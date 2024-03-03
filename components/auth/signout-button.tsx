@@ -1,15 +1,14 @@
 import React from 'react'
 import { signOut } from '@/auth'
+import { Button } from '../ui/button'
 
-const SignOutButton = () => {  
+const SignOutButton = () => {
   return (
-    <form action={async ()=> {
+    <form className="flex items-center" action={async () => {
       "use server"
       await signOut()
     }}>
-      <button>
-        Sign Out
-      </button>
+      <Button variant={"link"} >Logout</Button>
     </form>
   )
 }

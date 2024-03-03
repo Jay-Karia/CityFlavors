@@ -27,6 +27,6 @@ export const register = async (values: z.infer<typeof registerSchema>) => {
         }
     })
 
-    return { msg: "Email sent", status: "success" }
+    return { msg: "User successfully registered, you can now log in to your account", status: "success" }
 
 }

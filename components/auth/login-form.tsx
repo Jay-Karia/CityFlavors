@@ -42,11 +42,12 @@ const LoginForm = () => {
         startTransition(() => {
             login(values)
                 .then((res) => {
-                    if (res.status === "error")
-                        toast({
-                            description: res.msg,
-                            variant: "destructive"
-                        })
+                    if (res)
+                        if (res.status === "error")
+                            toast({
+                                description: res.msg,
+                                variant: "destructive"
+                            })
                 })
         });
     }

@@ -3,7 +3,7 @@ import Menu from "@/components/menu";
 import LinkGroup from "@/components/link-group";
 import { Button } from "@/components/ui/button";
 import { CiMenuBurger } from "react-icons/ci";
-import { auth} from "@/auth";
+import { auth } from "@/auth";
 
 import Link from "next/link";
 import SignOutButton from "@/components/auth/signout-button";
@@ -25,10 +25,10 @@ const Navbar = async () => {
       </div>
 
       <div className="hidden sm:block space-x-5">
-        {session ? <>
+        {session ? <div className="flex">
           <Button variant={"link"} asChild><Link href="/profile">Profile</Link></Button>
           <SignOutButton />
-        </> : <> <Button variant={"link"} asChild><Link href="/login">Login</Link></Button>
+        </div> : <> <Button variant={"link"} asChild><Link href="/login">Login</Link></Button>
           <Button variant={"outline"} asChild><Link href="/register">Register</Link></Button></>}
       </div>
 

@@ -47,11 +47,6 @@ const LoginForm = () => {
                             description: res.msg,
                             variant: "destructive"
                         })
-                    else
-                        toast({
-                            description: res.msg,
-                            variant: "success"
-                        })
                 })
         });
     }

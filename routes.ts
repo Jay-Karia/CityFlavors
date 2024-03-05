@@ -1,7 +1,8 @@
 export const publicRoutes = [
     "/",
     "/about",
-    "/contact"
+    "/contact",
+    "/api/auth"
 ]
 
 export const authRoutes = [
@@ -9,6 +10,6 @@ export const authRoutes = [
     "/register"
 ]
 
-export const authPrefix = "/api/auth"
+export const authPrefix = "/api/auth/"
 
 export const DEFAULT_LOGIN_REDIRECT = "/"

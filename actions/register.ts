@@ -5,6 +5,7 @@ import registerSchema from "@/schemas/registerSchema"
 import db from "@/lib/db"
 import bcrpyt from "bcryptjs"
 import { getUserFromEmail } from "@/lib/getUser"
+import generateVerificationCode from "@/lib/generateVerificationCode"
 
 export const register = async (values: z.infer<typeof registerSchema>) => {
     const validatedData = registerSchema.parse(values)
@@ -21,13 +22,15 @@ export const register = async (values: z.infer<typeof registerSchema>) => {
     const hashedPassword = await bcrpyt.hash(validatedData.password, 10);
     await db.user.create({
         data: {
-            name: validatedData.name,
+            name: validatedData.name.replace(/\s/g, "").toLowerCase(),
             email: validatedData.email,
             password: hashedPassword,
             role: "USER"
         }
     })
 
-    return { msg: "User successfully registered, you can now log in to your account", status: "success" }
+    const verificationCode = generateVerificationCode(validatedData.email);
+
+    return { msg: "User successfully registered, verify your email", status: "success" }
 
 }

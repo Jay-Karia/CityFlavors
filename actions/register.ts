@@ -6,6 +6,7 @@ import db from "@/lib/db"
 import bcrpyt from "bcryptjs"
 import { getUserFromEmail } from "@/lib/getUser"
 import generateVerificationCode from "@/lib/generateVerificationCode"
+import sendEmail from "@/lib/sendEmail"
 
 export const register = async (values: z.infer<typeof registerSchema>) => {
     const validatedData = registerSchema.parse(values)
@@ -29,7 +30,9 @@ export const register = async (values: z.infer<typeof registerSchema>) => {
         }
     })
 
-    const verificationCode = generateVerificationCode(validatedData.email);
+    const verificationCode = await generateVerificationCode(validatedData.email);
+    console.log(verificationCode)
+    // await sendEmail(validatedData.email, verificationCode);
 
     return { msg: "User successfully registered, verify your email", status: "success" }
 
